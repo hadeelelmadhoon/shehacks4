@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import './profile.dart';
+import './experiences.dart';
+import './overview.dart';
+
 
 void main() => runApp(MyApp());
 
@@ -7,8 +11,6 @@ class MyApp extends StatefulWidget {
   State<StatefulWidget> createState() {
     return MyAppState();
   }
-
-
 }
 
 
@@ -16,9 +18,9 @@ class MyAppState extends State<MyApp> {
 
   int selectedPage = 0;
   final pageOptions = [
-    Text('Item 1'),
-    Text('Item 2'),
-    Text('Item 3'),
+    ExperiencesPage(),
+    OverviewPage(),
+    ProfilePage(),
   ];
 
   @override
@@ -41,12 +43,15 @@ class MyAppState extends State<MyApp> {
           items: [
             BottomNavigationBarItem(
               icon: Icon(Icons.event),
+              title: Text('')
             ),
             BottomNavigationBarItem(
                 icon: Icon(Icons.attach_money),
+                title: Text('')
             ),
             BottomNavigationBarItem(
                 icon: Icon(Icons.person),
+                title: Text('')
             ),
           ],
         ),
