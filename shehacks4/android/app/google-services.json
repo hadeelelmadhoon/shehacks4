@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1098744368267",
+    "firebase_url": "https://shehacks4.firebaseio.com",
+    "project_id": "shehacks4",
+    "storage_bucket": "shehacks4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1098744368267:android:b50c9446b3a41b3280d88e",
+        "android_client_info": {
+          "package_name": "com.sheshacks.shehacks4"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1098744368267-3r1q39k3mj6iomjh6q2vf6aq7m37ighv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgUvRfvMI6IVU7BdDE3841ARvszFgwIPA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1098744368267-3r1q39k3mj6iomjh6q2vf6aq7m37ighv.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1098744368267-ip7dkce46j00bvbrggjvllle3830j804.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.shehacks.shehacks4"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
