@@ -35,7 +35,19 @@ class ExperienceDetailPageState extends State<ExperienceDetailPage> {
           return ListView.builder(
             itemCount: ss.data.length,
             itemBuilder: (_, i){
-              print(ss.data[i].data["expense"]);
+              // var str = ss.data[i].data["cost"];
+              var cost = int.tryParse(ss.data[i].data["cost"]);
+              List<dynamic> s = ss.data[i].data["split"];
+              var people = 0;
+              s.forEach((f) =>{
+                people++
+                });
+              var c = cost/(people+1);
+              String s1 = "";
+              s.forEach((f) =>{
+                s1 += (f + " -" + c.toString() + "\n\n")
+                });
+              
               // return Container();
               return Container(
                 decoration: BoxDecoration(color: Colors.white),
@@ -46,7 +58,9 @@ class ExperienceDetailPageState extends State<ExperienceDetailPage> {
                         color: Colors.white,
                       ),
                       ListTile(
-                        title: Text(ss.data[i].data["expense"]),
+                        title: Text(ss.data[i].data["expense"], style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold)),
+                        subtitle: Text(s1, style: TextStyle(color: Colors.green, fontStyle: FontStyle.italic, fontSize: 15.0),),
+                    
                       )
                     ],
                   )
