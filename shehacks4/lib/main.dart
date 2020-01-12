@@ -2,20 +2,33 @@ import 'package:flutter/material.dart';
 import './profile.dart';
 import './experiences.dart';
 import './overview.dart';
+import './login.dart';
 
 
 void main() => runApp(MyApp());
 
-class MyApp extends StatefulWidget {
+class MyAppLogin extends StatelessWidget {
+  // This widget is the root of your application.
   @override
-  State<StatefulWidget> createState() {
-    return MyAppState();
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.green,
+      ),
+      home: new LoginPage(),
+    );
   }
+}
+
+class MyApp extends StatefulWidget {
+ State<StatefulWidget> createState() {
+   return MyAppState();
+ }
 }
 
 
 class MyAppState extends State<MyApp> {
-
   int selectedPage = 0;
   final pageOptions = [
     ExperiencesPage(),
@@ -28,7 +41,7 @@ class MyAppState extends State<MyApp> {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primaryColor: Colors.lightGreen[600]
       ),
       home: Scaffold(
         appBar: AppBar(title: Text('Bottom Nav Bar'),),
