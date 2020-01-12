@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './owing.dart';
+import './owed.dart';
 
 class OverviewPage extends StatelessWidget {
 
@@ -36,16 +37,8 @@ class OverviewPage extends StatelessWidget {
           ),
           body: TabBarView(
             children: <Widget>[
-              Container(
-                margin: const EdgeInsets.all(10),
-                child: Column(
-                  children: <Widget>[
-                    Text("hello"),
-                    Text("sup")
-                  ],
-                ),
-              ),
-              OwingPage()
+              OwingPage(),
+              OwedPage()
             ],
           ),
         ),

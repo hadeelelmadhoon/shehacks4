@@ -57,9 +57,10 @@ class _LoginPageState extends State<LoginPage> {
     return new Scaffold(
       appBar: _buildBar(context),
       body: new Container(
-        padding: EdgeInsets.all(16.0),
+        padding: EdgeInsets.all(26.0),
         child: new Column(
           children: <Widget>[
+            new SizedBox(height: 120,),
             _buildTextFields(),
             _buildButtons(),
           ],
@@ -70,7 +71,7 @@ class _LoginPageState extends State<LoginPage> {
 
   Widget _buildBar(BuildContext context) {
     return new AppBar(
-      title: new Text("sheHacks IV App"),
+      title: new Text("Expense Buddy"),
       centerTitle: true,
     );
   }
@@ -108,6 +109,7 @@ class _LoginPageState extends State<LoginPage> {
       return new Container(
         child: new Column(
           children: <Widget>[
+            new SizedBox(height: 35,),
             new RaisedButton(
               child: new Text('Login'),
               onPressed: _loginPressed,
