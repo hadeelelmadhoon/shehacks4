@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-<<<<<<< HEAD
 import './detail.dart';
-=======
->>>>>>> 92189968a5c61da1aba64953573c5575adb8343d
 
 class ExperiencesPage extends StatefulWidget {
   @override
@@ -51,9 +48,15 @@ class ExperiencesPageState extends State<ExperiencesPage> {
                             ),
                             ),
                           ListTile(
-<<<<<<< HEAD
-                          title: Text(snapshot.data[index].data["name"], textAlign: TextAlign.center, style: TextStyle(fontSize: 45.0, fontWeight: FontWeight.bold),
-    )),
+                          title: Align(
+                              child: new Text(
+                                snapshot.data[index].data["name"],
+                                textAlign: TextAlign.center,
+                                style: TextStyle(fontSize: 45.0, fontWeight: FontWeight.bold),
+                                ),
+                              alignment: Alignment(0, 0)
+                            )
+                          ),
                         new InkWell(
                         onTap: () {
                           Navigator.push(context, MaterialPageRoute(builder: (context)=> ExperienceDetailPage(snapshot.data[index].data["name"])));
@@ -63,17 +66,7 @@ class ExperiencesPageState extends State<ExperiencesPage> {
                         //   height: 100.0,
                         //   ),
   ),
-=======
-                            title: Align(
-                              child: new Text(
-                                snapshot.data[index].data["name"],
-                                textAlign: TextAlign.center,
-                                style: TextStyle(fontSize: 45.0, fontWeight: FontWeight.bold),
-                                ),
-                              alignment: Alignment(0, 0)
-                            )
-                          ),
->>>>>>> 92189968a5c61da1aba64953573c5575adb8343d
+                  
                       ]
                     )
                 ),
