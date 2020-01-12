@@ -1,26 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-// final db = Firestore.instance;
-
-// void getData() {
-//   db
-//       .collection("experiences")
-//       .getDocuments()
-//       .then((QuerySnapshot snapshot) {
-//     snapshot.documents.forEach((f) => print('${f.data}}'));
-//   });
-// }
-
-// class ExperiencesPage extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context){
-//     return Container(
-//       child: Text('Experiences'),
-//     );
-//   }
-// }
-
 class ExperiencesPage extends StatefulWidget {
   @override
   ExperiencesPageState createState() => ExperiencesPageState();
@@ -71,8 +51,15 @@ class ExperiencesPageState extends State<ExperiencesPage> {
                             ),
                             ),
                           ListTile(
-                          title: Text(snapshot.data[index].data["name"], textAlign: TextAlign.center, style: TextStyle(fontSize: 45.0, fontWeight: FontWeight.bold),
-    )),
+                            title: Align(
+                              child: new Text(
+                                snapshot.data[index].data["name"],
+                                textAlign: TextAlign.center,
+                                style: TextStyle(fontSize: 45.0, fontWeight: FontWeight.bold),
+                                ),
+                              alignment: Alignment(0, 0)
+                            )
+                          ),
                       ]
                     )
                 ),
