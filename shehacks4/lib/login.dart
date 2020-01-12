@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shehacks4/main.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -78,19 +79,9 @@ class _LoginPageState extends State<LoginPage> {
     return new Container(
       child: new Column(
         children: <Widget>[
-          Container(
-             height: 120.0,
-             width: 120.0,
-            decoration: new BoxDecoration(
-              image: DecorationImage(
-                image: new AssetImage("https://www.google.com/search?q=smiling+animated+person&rlz=1C1CHBF_enCA814CA814&sxsrf=ACYBGNRYik2hhT0khaw-2O0ko32gCpGv4g:1578798042802&source=lnms&tbm=isch&sa=X&ved=2ahUKEwiIpI2Eif3mAhUCRa0KHUvsBl8Q_AUoAXoECA0QAw&biw=500&bih=568#imgrc=PYvLHAWo-z0JAM:"),
-                fit: BoxFit.fill,
-                ),
-                shape: BoxShape.circle,
-            ),
-          ),
+          
           new Container(
-            margin: const EdgeInsets.only(top:180),
+            
             child: new TextField(
               controller: _emailFilter,
               decoration: new InputDecoration(
@@ -136,7 +127,7 @@ class _LoginPageState extends State<LoginPage> {
             new FlatButton(
               child: new Text('Forgot Your Password?'),
               onPressed: _passwordReset,
-            )
+            ),
           ],
         ),
       );
@@ -170,7 +161,7 @@ class _LoginPageState extends State<LoginPage> {
 
   void _loginPressed () {
     print('The user wants to login with $_email and $_password');
-    
+      Navigator.push(context, MaterialPageRoute(builder: (context)=> MyApp()));
   }
 
   void _createAccountPressed () {
