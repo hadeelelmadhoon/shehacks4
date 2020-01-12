@@ -1,6 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class OwingPage extends StatelessWidget {
+  // static Firestore _firestore = Firestore.instance;
+
+  // static Future<QuerySnapshot> getAllDoc() {
+  //   return _firestore.collection("expenses").getDocuments();
+  // }
+  // QuerySnapshot alldoc =  getAllDoc();
+
   @override
   Widget build(BuildContext context){
     return Scaffold(
@@ -23,6 +31,7 @@ class OwingPage extends StatelessWidget {
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)
                 )
             ),
+            /////////////////
           ],
         )
       )

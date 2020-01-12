@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import './details.dart';
+import './detail.dart';
 
 class ExperiencesPage extends StatefulWidget {
   @override
@@ -59,12 +59,8 @@ class ExperiencesPageState extends State<ExperiencesPage> {
                           ),
                         new InkWell(
                         onTap: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context)=> ExperiencesDetailPage()));
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=> ExperienceDetailPage(snapshot.data[index].data["name"])));
                         },
-                        // child: Container(
-                        //   width: 100.0,
-                        //   height: 100.0,
-                        //   ),
                         ),
                   
                       ]
