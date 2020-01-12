@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'dart:collection';
 
 class OwingPage extends StatelessWidget {
 
@@ -32,11 +33,11 @@ class OwingPage extends StatelessWidget {
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)
                 )
             ),
-            
-            Row(children: <Widget>[
-              Text(getOwing()),
-              Text(getUser("hadeele"))
-            ]),
+            Text(owesMeString())
+            // Row(children: <Widget>[
+            //   Text(getOwing()),
+            //   Text(getUser("hadeele"))
+            // ]),
             // Container(
             //   // alignment: Alignment.topCenter,
             //   child: Text(getUser("khk"))),
@@ -44,6 +45,50 @@ class OwingPage extends StatelessWidget {
             ),
         )
       );
+  }
+
+  HashMap getOwesMe(){
+    HashMap map = HashMap();
+
+    databaseReference.collection("users").getDocuments().then((QuerySnapshot qs) {
+      qs.documents.forEach((f) => {
+          print(f.data["username"]),
+            map.putIfAbsent(f.data["username"], () => 0)
+      });
+      map.putIfAbsent("hadeele", () => 0);
+    });
+
+    var people = 0;
+    var str = "";
+    print("hello");
+    databaseReference.collection("expenses").getDocuments().then((QuerySnapshot s) {
+      s.documents.forEach((f) => {
+          people++,
+          str = f.data["cost"]
+      });
+      print(people);
+      var cost = int.tryParse(str);
+      var c = cost/people;
+      s.documents.forEach((f) => {
+        f.data["split"].forEach((p) => {
+          map.update(p, (v) => (map[p] + c)),
+          print("person: " + map[p])
+        })
+      });
+
+    });
+    return map;
+  }
+
+  String owesMeString() {
+    String str = "";
+    HashMap map = getOwesMe();
+    map.forEach((k, v) {
+      str += '{ $k: $v } \n';
+    });
+    print(map["evelynb"]);
+    print(str);
+    return str;
   }
 
   String getUser(String name){
