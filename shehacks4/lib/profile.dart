@@ -30,6 +30,7 @@ class ProfilePage extends StatelessWidget {
             new RaisedButton(
               child: new Text('Logout', style: new TextStyle(fontSize:10.0, color: Colors.lightGreen[100],
                backgroundColor: Colors.grey[750])),
+               onPressed: (){},
                //onPressed: Navigator.popUntil(context, ModalRoute.withName(ScreenName.loginScreen));
             ),
           ],
