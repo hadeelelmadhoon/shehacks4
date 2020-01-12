@@ -6,7 +6,7 @@ class OwingPage extends StatelessWidget {
 
   final databaseReference = Firestore.instance;
 
-  String newString = "";
+  List<String> newString = [];
   int total = 0;
   int people = 1;
   int owing = 0;

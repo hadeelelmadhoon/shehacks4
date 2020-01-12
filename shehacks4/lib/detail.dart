@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import './users.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class ExperienceDetailPage extends StatefulWidget {
@@ -45,12 +44,12 @@ class ExperienceDetailPageState extends State<ExperienceDetailPage> {
               var c = cost/(people+1);
               String s1 = "";
               s.forEach((f) =>{
-                s1 += (f + " -" + c.toString() + "\n\n")
+                s1 += (f + "                 -" + c.toString() + "\n")
                 });
               
               // return Container();
               return Container(
-                decoration: BoxDecoration(color: Colors.white),
+                // decoration: BoxDecoration(color: Colors.black),
                 child: Card(
                   child: new Stack(
                     children: <Widget>[
@@ -61,7 +60,19 @@ class ExperienceDetailPageState extends State<ExperienceDetailPage> {
                         title: Text(ss.data[i].data["expense"] + "\n", style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold)),
                         subtitle: Text(s1, style: TextStyle(color: Colors.green, fontStyle: FontStyle.italic, fontSize: 15.0),),
                     
-                      )
+                      ),
+                      Align( child: RaisedButton(
+                        onPressed: () {
+                          try{
+                            Firestore.instance.collection("expense").document("1").delete();
+                          }
+                          catch(e){
+                            print(e.toString());
+                          }
+                        },
+                        child: Icon(Icons.delete, size: 20,) ,
+                        color: Colors.green,),
+                        alignment: Alignment.bottomRight,)
                     ],
                   )
                 ));
@@ -73,7 +84,7 @@ class ExperienceDetailPageState extends State<ExperienceDetailPage> {
           }
         }
       )
-    );    
+    ); 
   }
 }
 
