@@ -5,7 +5,7 @@ import './overview.dart';
 import './login.dart';
 
 
-void main() => runApp(MyApp());
+void main() => runApp(MyAppLogin());
 
 class MyAppLogin extends StatelessWidget {
   // This widget is the root of your application.
