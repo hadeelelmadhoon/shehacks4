@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './users.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class ExperienceDetailPage extends StatefulWidget {
@@ -12,15 +13,11 @@ class ExperienceDetailPage extends StatefulWidget {
 class ExperienceDetailPageState extends State<ExperienceDetailPage> {
   final String name;
   ExperienceDetailPageState(this.name);
-  String ns = "";
 
   Future getExpenses() async{
     var db = Firestore.instance;
-    Query query = await db.collection("expenses").where('exp', isEqualTo: name);
-    query.getDocuments().then((qq){
-      print(qq.documents[0]);
-    });
-    return ns;
+    QuerySnapshot query = await db.collection("expenses").where('exp', isEqualTo: name).getDocuments();
+    return query.documents;
   }
 
   @override
@@ -61,7 +58,7 @@ class ExperienceDetailPageState extends State<ExperienceDetailPage> {
                         color: Colors.white,
                       ),
                       ListTile(
-                        title: Text(ss.data[i].data["expense"], style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold)),
+                        title: Text(ss.data[i].data["expense"] + "\n", style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold)),
                         subtitle: Text(s1, style: TextStyle(color: Colors.green, fontStyle: FontStyle.italic, fontSize: 15.0),),
                     
                       )
@@ -79,3 +76,26 @@ class ExperienceDetailPageState extends State<ExperienceDetailPage> {
     );    
   }
 }
+
+/*Material(
+    color: Colors.white,
+    child: Center(
+      child: Align(
+        alignment: Alignment(0.85, -0.85),
+        child: Ink(
+        decoration: const ShapeDecoration(
+          color: Colors.lightBlue,
+          shape: CircleBorder(),
+        ),
+        child: IconButton(
+          icon: Icon(Icons.person),
+          color: Colors.white,
+          onPressed: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context)=> UsersPage(name)));
+          },
+        ),
+      ),
+    ),
+    ),
+  )
+  );*/
