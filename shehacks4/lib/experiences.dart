@@ -65,7 +65,7 @@ class ExperiencesPageState extends State<ExperiencesPage> {
                         //   width: 100.0,
                         //   height: 100.0,
                         //   ),
-  ),
+                        ),
                   
                       ]
                     )
