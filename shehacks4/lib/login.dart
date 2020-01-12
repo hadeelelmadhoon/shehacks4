@@ -108,10 +108,18 @@ class _LoginPageState extends State<LoginPage> {
             new RaisedButton(
               child: new Text('Login'),
               onPressed: _loginPressed,
+              color: Color(0xff8BC34A),
+              textColor: Colors.white,
+              splashColor: Colors.grey,
+              padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
             ),
             new FlatButton(
               child: new Text('Register'),
               onPressed: _formChange,
+              color: Color(0xff8BC34A),
+              textColor: Colors.white,
+              splashColor: Colors.grey,
+              padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
             ),
             new FlatButton(
               child: new Text('Forgot Your Password?'),
@@ -127,10 +135,18 @@ class _LoginPageState extends State<LoginPage> {
             new RaisedButton(
               child: new Text('Sign Up'),
               onPressed: _createAccountPressed,
+              color: Color(0xff8BC34A),
+              textColor: Colors.white,
+              splashColor: Colors.grey,
+              padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
             ),
             new FlatButton(
-              child: new Text('Login'),
+              child: new Text('Login'), 
               onPressed: _formChange,
+              color: Color(0xff8BC34A),
+              textColor: Colors.white,
+              splashColor: Colors.grey,
+              padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
             )
           ],
         ),

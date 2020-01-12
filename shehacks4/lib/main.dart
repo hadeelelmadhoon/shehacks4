@@ -5,7 +5,7 @@ import './overview.dart';
 import './login.dart';
 
 
-void main() => runApp(MyAppLogin());
+void main() => runApp(MyApp());
 
 class MyAppLogin extends StatelessWidget {
   // This widget is the root of your application.
@@ -14,8 +14,7 @@ class MyAppLogin extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primaryColor: Colors.lightBlueAccent,
-        accentColor: Colors.amber[200],
+        primarySwatch: Colors.green,
       ),
       home: new LoginPage(),
     );
@@ -42,7 +41,7 @@ class MyAppState extends State<MyApp> {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primaryColor: Colors.lightGreen[600]
       ),
       home: Scaffold(
         appBar: AppBar(title: Text('Bottom Nav Bar'),),
