@@ -1,9 +1,4 @@
 import 'package:flutter/material.dart';
-import './profile.dart';
-import './experiences.dart';
-import './overview.dart';
-import './login.dart';
-
 
 class ProfilePage extends StatelessWidget {
 

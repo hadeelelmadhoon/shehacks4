@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import './owed.dart';
 import './owing.dart';
 
 class OverviewPage extends StatelessWidget {

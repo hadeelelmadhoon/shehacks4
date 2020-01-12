@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import './users.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class ExperienceDetailPage extends StatefulWidget {
@@ -13,11 +12,15 @@ class ExperienceDetailPage extends StatefulWidget {
 class ExperienceDetailPageState extends State<ExperienceDetailPage> {
   final String name;
   ExperienceDetailPageState(this.name);
+  String ns = "";
 
   Future getExpenses() async{
     var db = Firestore.instance;
-    QuerySnapshot query = await db.collection("expenses").where('exp', isEqualTo: name).getDocuments();
-    return query.documents;
+    Query query = await db.collection("expenses").where('exp', isEqualTo: name);
+    query.getDocuments().then((qq){
+      print(qq.documents[0]);
+    });
+    return ns;
   }
 
   @override
@@ -62,26 +65,3 @@ class ExperienceDetailPageState extends State<ExperienceDetailPage> {
     );    
   }
 }
-
-/*Material(
-    color: Colors.white,
-    child: Center(
-      child: Align(
-        alignment: Alignment(0.85, -0.85),
-        child: Ink(
-        decoration: const ShapeDecoration(
-          color: Colors.lightBlue,
-          shape: CircleBorder(),
-        ),
-        child: IconButton(
-          icon: Icon(Icons.person),
-          color: Colors.white,
-          onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context)=> UsersPage(name)));
-          },
-        ),
-      ),
-    ),
-    ),
-  )
-  );*/
