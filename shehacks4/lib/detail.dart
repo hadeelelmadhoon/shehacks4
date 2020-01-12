@@ -70,7 +70,7 @@ class ExperienceDetailPageState extends State<ExperienceDetailPage> {
                             print(e.toString());
                           }
                         },
-                        child: Icon(Icons.delete, size: 20,) ,
+                        child: Icon(Icons.payment, size: 20,) ,
                         color: Colors.green,),
                         alignment: Alignment.bottomRight,)
                     ],

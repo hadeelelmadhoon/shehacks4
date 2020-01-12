@@ -21,11 +21,6 @@ class OwingPage extends StatelessWidget {
           .height,
         child: Stack(
           children: <Widget>[
-            Positioned(
-              right:0.0,
-              top:0.0,
-              child: new Icon(Icons.favorite, color:Colors.red, size:30.0),
-            ),
             Align(
               alignment: Alignment.topCenter,
               child: Text("Money Owing", 
@@ -33,7 +28,10 @@ class OwingPage extends StatelessWidget {
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)
                 )
             ),
-            Text(owesMeString())
+            Container(child: Text("hadeele: +\$200\n")),
+            Container(child: Text("sarahs: +\$30\n")),
+            Container(child: Text("evelynb: +\$350\n")),
+            // Text(owesMeString())
             // Row(children: <Widget>[
             //   Text(getOwing()),
             //   Text(getUser("hadeele"))
