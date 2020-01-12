@@ -1,25 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-
-// final db = Firestore.instance;
-
-// void getData() {
-//   db
-//       .collection("experiences")
-//       .getDocuments()
-//       .then((QuerySnapshot snapshot) {
-//     snapshot.documents.forEach((f) => print('${f.data}}'));
-//   });
-// }
-
-// class ExperiencesPage extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context){
-//     return Container(
-//       child: Text('Experiences'),
-//     );
-//   }
-// }
+import './detail.dart';
 
 class ExperiencesPage extends StatefulWidget {
   @override
@@ -55,10 +36,6 @@ class ExperiencesPageState extends State<ExperiencesPage> {
                     clipBehavior: Clip.antiAliasWithSaveLayer,
                     child: new Stack(
                       children: <Widget>[
-                          // Image.network(
-                          // snapshot.data[index].data["img"],
-                          // fit: BoxFit.fitWidth,
-                          // ),
                           Container(
                             width: MediaQuery.of(context).size.width,
                             decoration: BoxDecoration(
@@ -73,6 +50,15 @@ class ExperiencesPageState extends State<ExperiencesPage> {
                           ListTile(
                           title: Text(snapshot.data[index].data["name"], textAlign: TextAlign.center, style: TextStyle(fontSize: 45.0, fontWeight: FontWeight.bold),
     )),
+                        new InkWell(
+                        onTap: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=> ExperienceDetailPage(snapshot.data[index].data["name"])));
+                        },
+                        // child: Container(
+                        //   width: 100.0,
+                        //   height: 100.0,
+                        //   ),
+  ),
                       ]
                     )
                 ),
