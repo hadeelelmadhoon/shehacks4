@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import './details.dart';
 
-class ExperiencesPage extends StatefulWidget {
+class ExperiencesDetailPage extends StatefulWidget {
   @override
-  ExperiencesPageState createState() => ExperiencesPageState();
+  ExperiencesDetailPageState createState() => ExperiencesDetailPageState();
 }
 
-class ExperiencesPageState extends State<ExperiencesPage> {
+class ExperiencesDetailPageState extends State<ExperiencesDetailPage> {
   
   Future getExperiences() async{
     var db = Firestore.instance;
@@ -57,16 +56,6 @@ class ExperiencesPageState extends State<ExperiencesPage> {
                               alignment: Alignment(0, 0)
                             )
                           ),
-                        new InkWell(
-                        onTap: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context)=> ExperiencesDetailPage()));
-                        },
-                        // child: Container(
-                        //   width: 100.0,
-                        //   height: 100.0,
-                        //   ),
-  ),
-                  
                       ]
                     )
                 ),

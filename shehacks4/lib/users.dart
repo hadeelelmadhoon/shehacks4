@@ -13,7 +13,11 @@ class UsersPageState extends State<UsersPage> {
   UsersPageState(this.name);
   Future getUsers() async{
     var db = Firestore.instance;
-    Query query = db.collection("experience").where('name', isEqualTo: name);
+    Future<QuerySnapshot> query = db.collection("experience")
+    .where('name', isEqualTo: name).where("users")
+    .getDocuments().then((QuerySnapshot snapshot){
+      return snapshot;
+    });
   }
 
   @override
@@ -27,19 +31,16 @@ class UsersPageState extends State<UsersPage> {
             child: Text("Loading..."),
             );
         } else {
-            return ListView.builder(
-              // itemCount: snapshot.data.length,
-              // for(int i = 0; i<snapshot.data.length; i++)
-
-
-              
-              // itemBuilder: (_, index){    
-                itemBuilder: (_, index2){
-                  return ListTile(
-                  title: Text(snapshot.data[index2].data["users"]),
+          return ListView.builder(
+              itemCount: snapshot.data.length,
+              itemBuilder: (_, index){           
+                ListTile(
+                  title: Align(
+                   child: new Text(
+                     snapshot.data[index]),
+                  )
                 );
-                
-              });
+              });           
         }
       }),
     );
