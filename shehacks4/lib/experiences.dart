@@ -61,10 +61,6 @@ class ExperiencesPageState extends State<ExperiencesPage> {
                         onTap: () {
                           Navigator.push(context, MaterialPageRoute(builder: (context)=> ExperienceDetailPage(snapshot.data[index].data["name"])));
                         },
-                        // child: Container(
-                        //   width: 100.0,
-                        //   height: 100.0,
-                        //   ),
                         ),
                   
                       ]
