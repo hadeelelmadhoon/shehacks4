@@ -73,6 +73,31 @@ class ProfilePage extends StatelessWidget {
                 child: Column(
                   children: <Widget>[
                     Text('Profile Totals', style: new TextStyle(fontSize: 35, fontFamily: 'Georgia', color: Colors.green )),
+                    Column(children: <Widget>[
+                      Padding(
+                        padding: EdgeInsets.all(50),
+                        child: Text("Travel:                          +\$1500\n",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(fontSize: 15, color: Colors.green,)),
+                      ),
+                    // ],
+                    // ),
+                    // Row(children: <Widget>[
+                      Padding(
+                        padding: EdgeInsets.all(50),
+                        child: Text("Food:                           -\$6.60\n",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(fontSize: 15, color: Colors.red,)),
+                      ),
+                    // ],),
+                    // Row(children: <Widget>[
+                      Padding(
+                        padding: EdgeInsets.all(50),
+                      child: Text("Transportation:                          +\$23\n",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(fontSize: 15, color: Colors.green,)),
+                      )
+                    ],)
                   ],
                 ),
               ),
@@ -81,7 +106,7 @@ class ProfilePage extends StatelessWidget {
                 child: Column(
                   children: <Widget>[
                     Text('Personal Information', style: new TextStyle(fontSize: 35, fontFamily: 'Georgia', color: Colors.green )),
-                    Text('Username:', style: new TextStyle(fontSize: 18, fontFamily: 'Georgia')),
+                    Text('Username:            nadeene', style: new TextStyle(fontSize: 18, fontFamily: 'Georgia')),
                     Text(''),
                     Text('To Logout: ', style: new TextStyle(fontSize: 18, fontFamily: 'Georgia')),
                     Text(''),

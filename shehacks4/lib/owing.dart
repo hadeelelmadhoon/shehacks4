@@ -28,18 +28,26 @@ class OwingPage extends StatelessWidget {
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)
                 )
             ),
-            Container(child: Text("hadeele: +\$200\n")),
-            Container(child: Text("sarahs: +\$30\n")),
-            Container(child: Text("evelynb: +\$350\n")),
-            // Text(owesMeString())
-            // Row(children: <Widget>[
-            //   Text(getOwing()),
-            //   Text(getUser("hadeele"))
-            // ]),
-            // Container(
-            //   // alignment: Alignment.topCenter,
-            //   child: Text(getUser("khk"))),
-          ]
+            Column(children: <Widget>[
+              Padding(
+                padding: EdgeInsets.all(50),
+                child: Text("hadeele:                          +\$40\n",
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 15, color: Colors.red,)),
+              ),
+              Padding(
+                padding: EdgeInsets.all(50),
+                child: Text("sarahs:                           +\$25\n",
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 15, color: Colors.red,)),
+              ),
+              Padding(
+                padding: EdgeInsets.all(50),
+              child: Text("evelynb:                           +\$16\n",
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 15, color: Colors.red,)),
+              )
+            ],),]
             ),
         )
       );
