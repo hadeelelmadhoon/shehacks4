@@ -5,18 +5,17 @@ class UsersPage extends StatefulWidget {
   final String name;
   UsersPage(this.name);
   @override
-  UsersPageState createState() => UsersPageState();
+  UsersPageState createState() => UsersPageState(name);
 }
 
 class UsersPageState extends State<UsersPage> {
-  
+  final String name;
+  UsersPageState(this.name);
   Future getUsers() async{
     var db = Firestore.instance;
-    DocumentReference dr = db.collection("experience").document("");
-    print(dr);
-    return dr;
+    Query query = db.collection("experience").where('name', isEqualTo: name);
   }
-  
+
   @override
   Widget build(BuildContext context){
     return Container(
